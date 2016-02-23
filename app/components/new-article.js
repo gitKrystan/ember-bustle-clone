@@ -12,7 +12,8 @@ export default Ember.Component.extend({
         category: this.get('category'),
         author: this.get('author'),
         image: this.get('image'),
-        content: this.get('content')
+        content: this.get('content'),
+        timestamp: new Date().getTime()
       };
       this.set('newArticleFormIsShowing', false);
       this.sendAction('saveNewArticle', params);

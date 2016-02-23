@@ -1,0 +1,14 @@
+<div class="">
+  <div class="article-block">
+    {{#link-to 'article' article.id}}
+    <img src={{article.image}} alt={{article.title}}/>
+    <div class="article-block-text">
+      <h3>{{article.title}}</h3>
+      <h6>{{article.category}}</h6>
+    </div>
+    {{/link-to}}
+    <div class="article-block-details">
+      <p>{{article.author}}</p>
+    </div>
+  </div>
+</div>

@@ -7,7 +7,6 @@ export default Ember.Route.extend({
 
   actions: {
     saveNewArticle(params) {
-      debugger;
       var newArticle = this.store.createRecord('article', params);
       newArticle.save();
     }
