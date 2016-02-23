@@ -1,3 +1,69 @@
 @import "bootstrap";
 
-body { padding-top: 70px; }
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+body {
+  padding-top: 70px;
+}
+
+.article-block {
+  display: inline-block;
+  margin: 0 0 25px 0;
+  padding: 8px;
+  position: relative;
+  width: 100%;
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .article-block-text {
+    padding: 15px 0 8px 0;
+    height: 72px;
+
+    h3 {
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.45em;
+    }
+
+    h6 {
+      background-image: linear-gradient(to bottom,rgba(0,0,0,.35) 0,rgba(0,0,0,.35) 5%,rgba(0,0,0,0) 100%);
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      font-weight: 400;
+      color: #FFF;
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin: 0;
+      padding: 10px 12px 24px;
+      text-align: left;
+      text-shadow: 0 1px 2px rgba(0,0,0,.6);
+      text-transform: uppercase;
+
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .article-block {
+    margin: 0 -1.3px 25px -1.3px;
+    width: 50%;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .article-block {
+    margin: 0 -1.3px 25px -1.3px;
+    width: 33.3333%;
+  }
+}
