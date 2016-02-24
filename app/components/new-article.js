@@ -23,6 +23,6 @@ export default Ember.Component.extend({
     updateCurrentContent() {
       this.set('currentContent', this.get('content'));
       console.log(this.get('currentContent'));
-    }.observes('content')
+    }
   }
 });
