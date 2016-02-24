@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   newArticleFormIsShowing: false,
+  currentContent: "Type content to see live preview",
   actions: {
     showNewArticleForm() {
       this.set('newArticleFormIsShowing', true);
@@ -17,6 +18,11 @@ export default Ember.Component.extend({
       };
       this.set('newArticleFormIsShowing', false);
       this.sendAction('saveNewArticle', params);
-    }
+    },
+
+    updateCurrentContent() {
+      this.set('currentContent', this.get('content'));
+      console.log(this.get('currentContent'));
+    }.observes('content')
   }
 });

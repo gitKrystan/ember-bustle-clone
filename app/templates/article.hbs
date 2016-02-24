@@ -1,1 +1,19 @@
-{{outlet}}
+<header class="article-page-header">
+  <div class="article-title">
+    <h1>{{model.title}}</h1>
+    <div class="article-details">
+      <p class="article-author">{{model.author}}</p>
+      <p>
+        <span class="article-timestamp">{{moment-from-now model.timestamp}}</span>
+        <span class="article-category">{{model.category}}</span>
+      </p>
+    </div>
+  </div>
+  <div class="article-image">
+    <img src={{model.image}} alt={{model.title}} />
+  </div>
+</header>
+
+<article>
+  {{markdown-to-html markdown=model.content}}
+</article>

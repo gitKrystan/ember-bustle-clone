@@ -1,42 +1,51 @@
-{{#if newArticleFormIsShowing}}
-<form class="form-horizontal">
-<div class="form-group">
-  <label for="title" class="col-sm-2 control-label">Title</label>
-  <div class="col-sm-10">
-    {{input value=title id="title" class='form-control'}}
-  </div>
-</div>
-<div class="form-group">
-  <label for="category" class="col-sm-2 control-label">Category</label>
-  <div class="col-sm-10">
-    {{input value=category id="category" class='form-control'}}
-  </div>
-</div>
-<div class="form-group">
-  <label for="author" class="col-sm-2 control-label">Author</label>
-  <div class="col-sm-10">
-    {{input value=author id="author" class='form-control'}}
-  </div>
-</div>
-<div class="form-group">
-  <label for="image" class="col-sm-2 control-label">Image Link</label>
-  <div class="col-sm-10">
-    {{input value=image id="image" class='form-control'}}
-  </div>
-</div>
-<div class="form-group">
-  <label for="content" class="col-sm-2 control-label">Content</label>
-  <div class="col-sm-10">
-    {{textarea value=content id="content" cols="80" rows="20" class='form-control'}}
-  </div>
-</div>
-<div class="form-group">
-  <div class="col-sm-offset-2 col-sm-10">
-    <button {{action 'saveNewArticle'}} class="btn btn-default">Submit Article</button>
-  </div>
-</div>
-</form>
+<div class="row">
+  {{#if newArticleFormIsShowing}}
+    <div class="col-sm-8">
+      <form class="form-horizontal">
+      <div class="form-group">
+        <label for="title" class="col-sm-2 control-label">Title</label>
+        <div class="col-sm-10">
+          {{input value=title id="title" class='form-control'}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="category" class="col-sm-2 control-label">Category</label>
+        <div class="col-sm-10">
+          {{input value=category id="category" class='form-control'}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="author" class="col-sm-2 control-label">Author</label>
+        <div class="col-sm-10">
+          {{input value=author id="author" class='form-control'}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="image" class="col-sm-2 control-label">Image Link</label>
+        <div class="col-sm-10">
+          {{input value=image id="image" class='form-control'}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="content" class="col-sm-2 control-label">Content</label>
+        <div class="col-sm-10">
+          {{textarea value=content id="content" cols="80" rows="20" class='form-control' key-up='updateCurrentContent'}}
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button {{action 'saveNewArticle'}} class="btn btn-default">Submit Article</button>
+        </div>
+      </div>
+      </form>
+    </div>
 
-{{else}}
-  <button {{action 'showNewArticleForm'}} class="btn btn-default">+ New Article</button>
-{{/if}}
+    <div class="col-sm-4">
+      <h3>Markdown Live Preview</h3>
+      {{markdown-to-html markdown=currentContent}}
+    </div>
+
+  {{else}}
+    <button {{action 'showNewArticleForm'}} class="btn btn-default">+ New Article</button>
+  {{/if}}
+</div>
